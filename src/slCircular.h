@@ -4,15 +4,17 @@
 #include "math.h"
 #include <iostream>
 
+#include "slEuclid.h"
+
 using namespace std;
 
-typedef struct sl_position {
-    
-    float x;
-    float y;
-    
-    
-} sl_position ;
+//typedef struct sl_position {
+//    
+//    float x;
+//    float y;
+//    
+//    
+//} sl_position ;
 
 
 //Test Perfect Sync?
@@ -25,8 +27,8 @@ class slCircular {
     float radius;
     float offset; //Offset in pirad
     float pirad;
-    sl_position center; //Center position in xy
-    sl_position arc_position; //Now Position in xy
+    sl_scaled_position center; //Center position in xy
+    sl_scaled_position arc_position; //Now Position in xy
 
     
     //Constructor1
@@ -75,7 +77,7 @@ class slCircular {
 
     
 
-    sl_position piradToPosition(float new_position){
+    sl_scaled_position piradToPosition(float new_position){
 
         pirad = new_position;
         //Position means pirad. ex. 1piRad=180, 0.5piPrad=90
